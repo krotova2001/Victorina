@@ -36,6 +36,8 @@ namespace Victorina_exam_
                     score += victorina.Answers[i].ElementAt(ans+1).Value; // получаем по индексу ключа значение
                 }
             }
+            Console.WriteLine($"Вы прошли викторину и набрали {score} баллов");
+            user.Inc_score(score);
         }
     }
 }
