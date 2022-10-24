@@ -10,7 +10,13 @@ namespace Victorina_exam_
     class Vict
     {
         string[] questions; // вопросы
-        Dictionary<string, int> answers; //варианты и ответов и баллы. индексы совпадают с вопросами
-        string theme; // тема или раздел викторины
+        Dictionary<string, int>[] answers; //варианты и ответов и баллы. Индексы совпадают с вопросами. Список словарей.
+        //Элемент списка совпадает с элементом массива вопроса. В словаре варинаты ответов и баллы.
+        public string theme; // тема или раздел викторины
+        public string [] Questions 
+        { 
+            get { return questions; }
+        }
+        public Dictionary<string, int>[] Answers { get { return answers; } }
     }
 }
