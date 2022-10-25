@@ -44,7 +44,9 @@ namespace Victorina_exam_
             Console.WriteLine($"Вы прошли викторину и набрали {score} баллов");
             user.Inc_score(score);
         }
-        public Vict Load_from_json(string filename) // метода загрузки викторины с файла
+        // метода загрузки викторины с файла.
+        //статичный метод, так как испольтзовать ее надо в нескольких классах сразу
+        static public Vict Load_from_json(string filename) 
         {
             string buff = File.ReadAllText(filename); // считываем файл
             Vict vict = JsonSerializer.Deserialize<Vict>(buff); // создаем объект из json

@@ -13,17 +13,17 @@ namespace Victorina_exam_
         public Dictionary<string, int>[] answers; //варианты и ответов и баллы. Индексы совпадают с вопросами. Список словарей.
         //Элемент списка совпадает с элементом массива вопроса. В словаре варианты ответов и баллы на каждый вопрос.
         public string theme; // тема или раздел викторины
-        public string [] Questions 
+        public string [] Questions // вернуть вопросы
         { 
             get { return questions; }
             set { questions = value; }
         }
-        public Dictionary<string, int>[] Answers 
+        public Dictionary<string, int>[] Answers  // ответы
         { 
             get { return answers; } 
             set { answers = value; }
-        } // вернуть вопросы
-        public Vict(int size) // Конструктор с кол-вом вопросов
+        } 
+        public Vict(int size) // Конструктор с кол-вом вопросов, необхожим для создания новой викторины
         {
             questions = new string[size];
             answers = new Dictionary<string, int>[size];
@@ -32,7 +32,7 @@ namespace Victorina_exam_
                 answers[i] = new Dictionary<string, int>();
             }
         }
-        public Vict() { } // конструктор по умолчанию
+        public Vict() { } // конструктор по умолчанию. Необхожим для сериализации
 
     }
 }

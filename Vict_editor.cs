@@ -14,11 +14,13 @@ namespace Victorina_exam_
     {
         public static void Create()
         {
-           
+            Console.WriteLine("Введите тему викторины");
+            string tema = Console.ReadLine();
             Console.WriteLine("Сколько будет вопросов?");
             int num;
             Int32.TryParse(Console.ReadLine(), out num); // запишем кол-во вопросов
             Vict vict = new Vict(num); // создадим пустую викторину
+            vict.theme = tema; // запишем тему
             for (int i = 1; i <= num; i++)
             {
                 Console.Write($"Вопрос {i}:");
