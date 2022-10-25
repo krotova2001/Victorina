@@ -14,22 +14,24 @@ namespace Victorina_exam_
     {
         public static void Create()
         {
-            Vict vict = new Vict(); // создадим пустую викторину
+           
             Console.WriteLine("Сколько будет вопросов?");
             int num;
             Int32.TryParse(Console.ReadLine(), out num); // запишем кол-во вопросов
+            Vict vict = new Vict(num); // создадим пустую викторину
             for (int i = 1; i <= num; i++)
             {
                 Console.Write($"Вопрос {i}:");
                 vict.Questions[i - 1] = Console.ReadLine();
                 for (int j = 1; j <= 4; j++)  // сделаем по 4 варианта ответа
                 {
-                    Console.Write($"Варинт ответа {j}:");
+                    Console.Write($"Вариант ответа {j}: ");
                     string ans = Console.ReadLine();
-                    Console.Write($"Балл за этот вариант:");
+                    Console.Write($"Балл за этот ответ: ");
                     int ball;
                     Int32.TryParse(Console.ReadLine(), out ball);
-                    vict.Answers[i - 1].Add(ans, ball); // запишем в словарь варинат ответа и его балл
+                    vict.answers[i - 1].Add(ans, ball); // запишем в словарь варинат ответа и его балл
+                    Console.Clear();
                 }
             }
             
