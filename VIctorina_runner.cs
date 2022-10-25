@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json; // небходимый пакет
+using System.Text.Json.Serialization;
+using System.IO;
 
 namespace Victorina_exam_
 {
@@ -39,5 +42,14 @@ namespace Victorina_exam_
             Console.WriteLine($"Вы прошли викторину и набрали {score} баллов");
             user.Inc_score(score);
         }
+        static public Vict Load_from_json(string filename) // метода загрузки викторины с файла
+        {
+            string buff = File.ReadAllText(filename); // считываем файл
+            Vict vict = JsonSerializer.Deserialize<Vict>(buff); // создаем объект из json
+            return vict;
+        }
+
+
+
     }
 }

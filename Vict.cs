@@ -11,12 +11,23 @@ namespace Victorina_exam_
     {
         string[] questions; // вопросы
         Dictionary<string, int>[] answers; //варианты и ответов и баллы. Индексы совпадают с вопросами. Список словарей.
-        //Элемент списка совпадает с элементом массива вопроса. В словаре варинаты ответов и баллы.
+        //Элемент списка совпадает с элементом массива вопроса. В словаре варианты ответов и баллы на каждый вопрос.
         public string theme; // тема или раздел викторины
         public string [] Questions 
         { 
             get { return questions; }
+            set { questions = value; }
         }
-        public Dictionary<string, int>[] Answers { get { return answers; } }
+        public Dictionary<string, int>[] Answers 
+        { 
+            get { return answers; } 
+            set { answers = value; }
+        } // вернуть вопросы
+        public Vict()
+        {
+            questions = new string[0];
+            answers = new Dictionary<string, int>[0];
+        }
+
     }
 }
