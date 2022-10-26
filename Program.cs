@@ -14,9 +14,10 @@ namespace Victorina_exam_
     {
         static void Main(string[] args)
         {
+            Users_container container = new Users_container();
+            User u = Users_container.Create_new_User();
             VIctorina_runner R = new VIctorina_runner();
             Vict t = VIctorina_runner.Load_from_json("test.json");
-            User u = new User("123", "321");
             R.Start(u, t);
         }
     }

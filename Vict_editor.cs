@@ -39,7 +39,7 @@ namespace Victorina_exam_
             
             Console.WriteLine("Введите имя файла викторины");
             string filename = Console.ReadLine();
-           
+            
             using (FileStream sr = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
             {
                 JsonSerializer.Serialize(sr, vict); // создаем новый json с готовой викториной
