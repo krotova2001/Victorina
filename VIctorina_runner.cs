@@ -43,6 +43,7 @@ namespace Victorina_exam_
             }
             Console.WriteLine($"Вы прошли викторину и набрали {score} баллов");
             user.Inc_score(score);
+            Console.ReadLine();
         }
         // метода загрузки викторины с файла.
         //статичный метод, так как испольтзовать ее надо в нескольких классах сразу

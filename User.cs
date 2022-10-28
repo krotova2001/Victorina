@@ -24,7 +24,7 @@ namespace Victorina_exam_
             this.is_admin = is_admin;
         }
 
-        public bool Is_admin { get { return is_admin; } } // показать права администратора
+        public bool Is_admin { get { return is_admin; } set { is_admin = value; } } // показать права администратора
         public int Score { get { return score; } } // показать очки (ретинг)
         public void Inc_score (int s) { score += s; } // доабвить очкт после прохождения теста
     }

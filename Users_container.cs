@@ -42,6 +42,12 @@ namespace Victorina_exam_
             Console.WriteLine("День рождения");
             DateTime D = DateTime.Parse(Console.ReadLine().Trim()); // формируем дату ДР;
             User user = new User(log, pass, D, false); // создаем нового юзера с указаными данными
+            Console.WriteLine("Вы администратор? (y/n)");
+            string admin_mark = Console.ReadLine();
+            if (admin_mark == "y")
+            {
+                user.Is_admin = true;
+            }
             users.Add(user); // добавляем в список
             return user;
         }
@@ -66,6 +72,24 @@ namespace Victorina_exam_
                 }
             }
             return true;
+        }
+
+        public static User Auth() // функция аутентификации
+        {
+            string log, pass;
+            Console.Write("Введите login:");
+            log = Console.ReadLine();
+            Console.Write("Введите password:");
+            pass= Console.ReadLine();
+            foreach (User l in users)
+            {
+                if (l.Login == log && l.Password == pass)
+                {
+                    return l;
+                }
+            }
+            Console.WriteLine("Неверный login или password");
+            return null;
         }
     }
 }
